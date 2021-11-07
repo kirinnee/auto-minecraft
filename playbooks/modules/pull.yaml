@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: /minecraft
+        state: absent
+    - name: Fetch stuff from the remote and save to local
+      synchronize: src=/minecraft/ dest=server/ mode=pull

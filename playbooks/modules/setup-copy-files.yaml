@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Creates base directory
+      file:
+        path: /minecraft
+        state: directory
+
+    - name: Move docker-compose file
+      copy:
+        src: setup/
+        dest: /minecraft/
+
+    - name: Creates data directory
+      file:
+        path: /minecraft/minecraft-data
+        state: directory

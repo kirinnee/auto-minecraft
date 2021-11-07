@@ -1,0 +1,12 @@
+*.pub
+**/.terraform
+.env
+.currentkey
+keys
+*.json
+.terraform
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+playbooks/modules/setup/modpacks

@@ -1,0 +1,119 @@
+version: "3"
+dotenv:
+  - .env
+
+tasks:
+  cfg:scripts:
+    desc: Configure Scripts to be executable
+    cmds:
+      - chmod -R +x ./scripts
+
+  setup:
+    desc: Setup Credentials
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/setup_creds.sh {{.CLI_ARGS}}
+
+  deploy:
+    desc: Deploy Minecraft server
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/run-playbook.sh deploy-playbook
+
+  pull:
+    desc: Pull all data back to this machine
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/run-playbook.sh pull-playbook
+
+  push:
+    desc: Push all data to new machine
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/push-playbook.sh push-playbook
+
+  key:
+    desc: Generate SSH-key for SSH keys
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/keymanager.sh {{.CLI_ARGS}}
+
+  enter:
+    desc: Enter host via SSH
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/exec.sh bash
+
+  log:
+    desc: Show Minecraft logs
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/exec.sh sudo docker logs minecraft_mc_1 -f
+
+  rcon:
+    desc: Show Minecraft logs
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/exec.sh sudo docker exec -i minecraft_mc_1 rcon-cli
+
+  usage:
+    desc: Check Docker Usage
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/exec.sh sudo docker stats
+
+  create:
+    desc: Create the droplet
+    cmds:
+      - terraform apply -var-file="keys.tfvars" -var-file="provider.tfvars"
+
+  destroy:
+    desc: Destroy the droplet
+    cmds:
+      - terraform destroy -var-file="keys.tfvars" -var-file="provider.tfvars"
+
+  lint:
+    desc: Lints all important files
+    cmds:
+      - task: lint:sh
+
+  lint:sh:
+    desc: Lints shell scripts
+    cmds:
+      - for file in $(find . -type f -name "*.sh"); do shellcheck $file; done;
+
+  fmt:
+    desc: Run all formatting supported.
+    ignore_error: true
+    summary: |
+      Runs all formatting supported.
+      1. Runs fmt:md, which formats all Markdown using prettier
+      2. Runs fmt:yaml, which formats all YAML using prettier
+      3. Runs fmt:nix, which formats all Nix files with nixpkgs-fmt
+      4. Runs fmt:sh, which format all sh files with shfmt
+    cmds:
+      - task: fmt:md
+      - task: fmt:yaml
+      - task: fmt:nix
+      - task: fmt:sh
+
+  fmt:sh:
+    desc: Formats shell scripts with shfmt
+    cmds:
+      - shfmt -w .
+  fmt:md:
+    ignore_error: true
+    desc: Formats Markdown with prettier
+    cmds:
+      - prettier -w "**/*.MD"
+  fmt:yaml:
+    ignore_error: true
+    desc: Formats YAML with prettier
+    cmds:
+      - prettier -w "**/*.yaml"
+      - prettier -w "**/*.yml"
+  fmt:nix:
+    ignore_error: true
+    desc: Formats Nix files
+    cmds:
+      - nixpkgs-fmt .

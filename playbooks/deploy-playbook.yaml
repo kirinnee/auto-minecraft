@@ -1,0 +1,3 @@
+- import_playbook: ./modules/install-docker.yaml
+- import_playbook: ./modules/setup-copy-files.yaml
+- import_playbook: ./modules/start-minecraft.yaml

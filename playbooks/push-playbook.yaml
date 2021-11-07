@@ -1,0 +1,2 @@
+- import_playbook: ./modules/install-docker.yaml
+- import_playbook: ./modules/push.yaml

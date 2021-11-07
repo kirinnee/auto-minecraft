@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: /minecraft
+        state: absent
+
+    - name: Delete existing folders
+      file:
+        path: /minecraft
+        state: absent
+
+    - name: Copy all server files to local
+      copy:
+        src: server/
+        dest: /minecraft/
+
+    - name: Create and start services
+      community.docker.docker_compose:
+        project_src: /minecraft
+      register: output
