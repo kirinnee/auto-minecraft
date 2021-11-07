@@ -30,7 +30,7 @@ tasks:
     desc: Push all data to new machine
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/push-playbook.sh push-playbook
+      - ./scripts/run-playbook.sh push-playbook
 
   key:
     desc: Generate SSH-key for SSH keys

@@ -10,6 +10,9 @@ services:
       TYPE: CURSEFORGE
       CF_SERVER_MOD: /modpacks/xlife3.zip
       MAX_TICK_TIME: -1
+      INIT_MEMORY: 4G
+      MAX_MEMORY: 16G
+
     tty: true
     stdin_open: true
     restart: unless-stopped

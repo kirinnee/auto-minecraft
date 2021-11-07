@@ -3,11 +3,12 @@
   become: true
   gather_facts: no
   tasks:
-    - name: Tear down existing services
-      community.docker.docker_compose:
-        project_src: /minecraft
-        state: absent
-
+    - block:
+        - name: Tear down existing services
+          community.docker.docker_compose:
+            project_src: /minecraft
+            state: absent
+      ignore_errors: yes
     - name: Delete existing folders
       file:
         path: /minecraft

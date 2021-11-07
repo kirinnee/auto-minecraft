@@ -22,7 +22,7 @@ module "gcp_minecraft" {
 
 
   region    = "asia-southeast1"
-  node_type = "e2-standard-8"
+  node_type = "c2-standard-4"
   zone      = "asia-southeast1-b"
 
   project_id = "ace-ellipse-331407"
