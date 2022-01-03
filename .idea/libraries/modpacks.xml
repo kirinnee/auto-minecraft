@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="modpacks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/modpacks/flywheel-1.16-0.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/modpacks/worldedit-mod-7.2.5-dist.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/modpacks/create-mc1.16.5_v0.3.2g.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/modpacks/Better+Minecraft+Server+Pack+[FORGE]+v46.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

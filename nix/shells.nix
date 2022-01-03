@@ -2,6 +2,6 @@
 let env = import ./env.nix { inherit nixpkgs; }; in
 {
   dev = nixpkgs.mkShell {
-    buildInputs = env.system ++ env.lint ++ env.dev ++ env.lint ++ [ ];
+    buildInputs = env.system ++ env.dev ++ env.lint ++ [ ];
   };
 }

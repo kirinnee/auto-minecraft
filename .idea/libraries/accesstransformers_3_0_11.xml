@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="accesstransformers-3.0.11">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/accesstransformers/3.0.1/accesstransformers-3.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

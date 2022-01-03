@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="toml-3.6.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/com/electronwill/night-config/toml/3.6.3/toml-3.6.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

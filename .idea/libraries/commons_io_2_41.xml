@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="commons-io-2.41">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/commons-io/commons-io/2.4/commons-io-2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="binarypatcher-1.0.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/net/minecraftforge/binarypatcher/1.0.12/binarypatcher-1.0.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -3,21 +3,8 @@
   become: true
   gather_facts: no
   tasks:
-    - block:
-        - name: Tear down existing services
-          community.docker.docker_compose:
-            project_src: /minecraft
-            state: absent
-      ignore_errors: yes
-    - name: Delete existing folders
-      file:
-        path: /minecraft
-        state: absent
-
-    - name: Copy all server files to local
-      copy:
-        src: server/
-        dest: /minecraft/
+    - name: Push stuff from local to remote
+      synchronize: dest=/minecraft/ src=server/ mode=push
 
     - name: Create and start services
       community.docker.docker_compose:

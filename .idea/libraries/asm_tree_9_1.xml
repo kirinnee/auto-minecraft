@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="asm-tree-9.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="coremods-4.0.61">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/net/minecraftforge/coremods/4.0.6/coremods-4.0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

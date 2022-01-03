@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="1.16.5-36.2.201">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/forge/1.16.5-36.2.20/forge-1.16.5-36.2.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/forge/1.16.5-36.2.20/forge-1.16.5-36.2.20-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/forge/1.16.5-36.2.20/forge-1.16.5-36.2.20-universal.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jarsplitter-1.1.41">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/jarsplitter/1.1.4/jarsplitter-1.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mixin-0.8.41">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/org/spongepowered/mixin/0.8.4/mixin-0.8.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="datapacks2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/the-forbidden-castle-v1-1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Better_Strongholds_Forge.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Buzzier_Bees.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Better_Dungeons_Forge.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Farmers_Delight_Forge.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-More_Villagers_Forge_v2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Savage_And_Ravage.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/ichphilipp-s-endcity-v1-1-1-16-2-forge.zip!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/config/paxi/datapacks/Repurposed_Structures-Environmental.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

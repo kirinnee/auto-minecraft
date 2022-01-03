@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="checker-qual-2.0.01">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

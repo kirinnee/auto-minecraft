@@ -120,6 +120,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_aws_minecraft"></a> [aws\_minecraft](#module\_aws\_minecraft) | ./aws | n/a |
 | <a name="module_do_minecraft"></a> [do\_minecraft](#module\_do\_minecraft) | ./droplet | n/a |
 | <a name="module_gcp_minecraft"></a> [gcp\_minecraft](#module\_gcp\_minecraft) | ./gcp | n/a |
 
@@ -131,7 +132,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | The cloud provider to use. Either digitalocean or gcp. | `string` | n/a | yes |
+| <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | The cloud provider to use. Either digitalocean or gcp or aws. | `string` | n/a | yes |
 | <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Path to private key | `string` | n/a | yes |
 | <a name="input_public_key_path"></a> [public\_key\_path](#input\_public\_key\_path) | Path to public key | `string` | n/a | yes |
 
@@ -139,5 +140,6 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | n/a |
 | <a name="output_server_ip"></a> [server\_ip](#output\_server\_ip) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

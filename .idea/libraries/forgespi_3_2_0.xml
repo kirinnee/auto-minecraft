@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="forgespi-3.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/net/minecraftforge/forgespi/3.2.0/forgespi-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

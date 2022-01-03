@@ -1,22 +1,43 @@
 version: "2.4"
 
 services:
+  agent:
+    container_name: newrelic-infra
+    image: newrelic/infrastructure:latest
+    cap_add:
+      - SYS_PTRACE
+    network_mode: host
+    pid: host
+    privileged: true
+    volumes:
+      - "/:/host:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    env_file:
+      - ./relic_env
+    restart: unless-stopped
   mc:
-    image: itzg/minecraft-server:java8
+    image: itzg/minecraft-server:java8-multiarch
     ports:
       - 25565:25565
+
     environment:
+      OVERRIDE_SERVER_PROPERTIES: "true"
       EULA: "TRUE"
-      TYPE: CURSEFORGE
-      CF_SERVER_MOD: /modpacks/xlife3.zip
+      VERSION: "1.16.5"
+
       MAX_TICK_TIME: -1
-      INIT_MEMORY: 4G
-      MAX_MEMORY: 16G
+      INIT_MEMORY: "4G"
+      MAX_MEMORY: "15G"
+      MAX_PLAYERS: 50
+      DIFFICULTY: "hard"
+      MOTD: "Atomi Better MC Server!"
+      TYPE: "FORGE"
+      GENERIC_PACK: "/modpacks/Better+Minecraft+Server+Pack+[FORGE]+v46.zip"
+      MODS: "/modpacks/worldedit-mod-7.2.5-dist.jar,/modpacks/flywheel-1.16-0.2.5.jar,/modpacks/create-mc1.16.5_v0.3.2g.jar,/modpacks/itemblacklist-1.16.5-1.2.0.jar,/modpacks/lycanitesmobs-1.16.5-2.3.3.2.jar,/modpacks/moreminecarts-1.3.12.jar,/modpacks/champions-forge-1.16.5-2.0.1.8.jar"
 
     tty: true
     stdin_open: true
     restart: unless-stopped
     volumes:
-      # attach a directory relative to the directory containing this compose file
       - ./minecraft-data:/data
       - ./modpacks:/modpacks

@@ -7,70 +7,180 @@ tasks:
     desc: Configure Scripts to be executable
     cmds:
       - chmod -R +x ./scripts
+  list:
+    desc: Setup Credentials
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh list
 
   setup:
     desc: Setup Credentials
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/setup_creds.sh {{.CLI_ARGS}}
+      - ./scripts/controller.sh setup {{.CLI_ARGS}}
 
   deploy:
     desc: Deploy Minecraft server
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/run-playbook.sh deploy-playbook
+      - ./scripts/controller.sh deploy {{.CLI_ARGS}}
 
   pull:
     desc: Pull all data back to this machine
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/run-playbook.sh pull-playbook
+      - ./scripts/controller.sh pull {{.CLI_ARGS}}
 
   push:
     desc: Push all data to new machine
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/run-playbook.sh push-playbook
+      - ./scripts/controller.sh push {{.CLI_ARGS}}
 
-  key:
-    desc: Generate SSH-key for SSH keys
+  pull:config:
+    desc: Pull configuration (only)
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/keymanager.sh {{.CLI_ARGS}}
+      - ./scripts/controller.sh configpull {{.CLI_ARGS}}
+  push:config:
+    desc: Push configuration (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh configpush {{.CLI_ARGS}}
+  pull:world:
+    desc: Pull World (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh worldpull {{.CLI_ARGS}}
+  push:world:
+    desc: Push World (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh worldpush {{.CLI_ARGS}}
+  pull:mods:
+    desc: Pull Mods (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh modspull {{.CLI_ARGS}}
+  push:mods:
+    desc: Push Mods (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh modspush {{.CLI_ARGS}}
+
+  pull:scripts:
+    desc: Pull scripts (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh scriptspull {{.CLI_ARGS}}
+  push:scripts:
+    desc: Push scripts (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh scriptspush {{.CLI_ARGS}}
+
+  pull:world:config:
+    desc: Pull World config (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh worldconfigpull {{.CLI_ARGS}}
+
+  push:world:config:
+    desc: Push World Config (only)
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh worldconfigpush {{.CLI_ARGS}}
 
   enter:
     desc: Enter host via SSH
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/exec.sh bash
+      - ./scripts/controller.sh enter {{.CLI_ARGS}}
 
   log:
     desc: Show Minecraft logs
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/exec.sh sudo docker logs minecraft_mc_1 -f
-
+      - ./scripts/controller.sh log {{.CLI_ARGS}}
   rcon:
-    desc: Show Minecraft logs
+    desc: Open RCON (admin) console for Minecraft
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/exec.sh sudo docker exec -i minecraft_mc_1 rcon-cli
-
-  usage:
-    desc: Check Docker Usage
+      - ./scripts/controller.sh rcon {{.CLI_ARGS}}
+  start:
+    desc: Start Minecraft Container
     deps: [cfg:scripts]
     cmds:
-      - ./scripts/exec.sh sudo docker stats
+      - ./scripts/controller.sh start {{.CLI_ARGS}}
 
+  stop:
+    desc: Stop Minecraft Container
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh stop {{.CLI_ARGS}}
+
+  restart:
+    desc: Restart Minecraft Container
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh restart {{.CLI_ARGS}}
+
+  boot:
+    desc: Boot Host machine
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh boot {{.CLI_ARGS}}
+
+  shutdown:
+    desc: Shutdown Host machine
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh shutdown {{.CLI_ARGS}}
+
+  reboot:
+    desc: Restart host machine
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh reboot {{.CLI_ARGS}}
   create:
-    desc: Create the droplet
+    desc: Create the instance (host machine)
+    deps: [cfg:scripts]
     cmds:
-      - terraform apply -var-file="keys.tfvars" -var-file="provider.tfvars"
-
+      - ./scripts/controller.sh create {{.CLI_ARGS}}
   destroy:
-    desc: Destroy the droplet
+    desc: Destroy the host machine
+    deps: [cfg:scripts]
     cmds:
-      - terraform destroy -var-file="keys.tfvars" -var-file="provider.tfvars"
+      - ./scripts/controller.sh destroy {{.CLI_ARGS}}
+
+  delete:
+    desc: Deletes the profile
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh delete {{.CLI_ARGS}}
+  ip:
+    desc: Shows the IP of the instance
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh ip {{.CLI_ARGS}}
+
+  sync:
+    desc: Synchronizes the terraform with cloud data
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/controller.sh sync {{.CLI_ARGS}}
+
+  cf:
+    desc: Runs cloudflare commands
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/cloudflare.sh {{.CLI_ARGS}}
+
+  dns:
+    desc: Update DNS to new IP
+    deps: [cfg:scripts]
+    cmds:
+      - ./scripts/cloudflare.sh update:dns sUy48W4INcN48k8IVhHlhrWuvE2997zInLqxYiSn 41201a882e27c65d82c19455d80b2fed 3f9825c67edeb83a13c11e973c302ca5 {{.CLI_ARGS}}
 
   lint:
     desc: Lints all important files

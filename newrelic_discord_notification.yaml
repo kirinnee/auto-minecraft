@@ -1,0 +1,48 @@
+content: |
+  __**$POLICY_NAME [$SEVERITY]**__ :warning:
+embeds:
+  - title: Incident
+    url: $INCIDENT_URL
+    description: |
+      $EVENT_DETAILS
+
+      $DESCRIPTION
+
+    color: 16077701
+    fields:
+      - name: Incident ID
+        value: $INCIDENT_ID
+        inline: true
+      - name: Event Type
+        value: $EVENT_TYPE
+        inline: true
+      - name: Time
+        value: $TIMESTAMP
+        inline: true
+      - name: UTC Time
+        value: $TIMESTAMP_UTC_STRING
+        inline: true
+      - name: Duration
+        value: $DURATION
+        inline: true
+      - name: State
+        value: $EVENT_STATE
+        inline: true
+      - name: Closed Critical
+        value: $CLOSED_VIOLATIONS_COUNT_CRITICAL
+        inline: true
+      - name: Closed Warning
+        value: $CLOSED_VIOLATIONS_COUNT_WARNING
+        inline: true
+      - name: Open Critical
+        value: $OPEN_VIOLATIONS_COUNT_CRITICAL
+        inline: true
+      - name: Open Warning
+        value: $OPEN_VIOLATIONS_COUNT_WARNING
+        inline: true
+      - name: Actions
+        value: |
+          [Ack]($INCIDENT_ACKNOWLEDGE_URL) :white_check_mark: [RunBook]($RUNBOOK_URL) :rocket:
+
+    image:
+      url: $VIOLATION_CHART_URL

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="fastcsv-2.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/de/siegmar/fastcsv/2.0.0/fastcsv-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

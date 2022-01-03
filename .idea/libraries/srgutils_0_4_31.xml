@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="srgutils-0.4.31">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/srgutils/0.4.3/srgutils-0.4.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

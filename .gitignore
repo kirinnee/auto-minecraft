@@ -10,3 +10,9 @@ terraform.tfstate
 terraform.tfstate.backup
 *.tfvars
 playbooks/modules/setup/modpacks
+playbooks/modules/
+!playbooks/modules/*.yaml
+.token
+**/meta.json
+**/gcpkey.json
+profiles/

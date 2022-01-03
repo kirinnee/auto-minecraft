@@ -13,6 +13,8 @@ with pkgs;
     go-task
     terraform
     ansible
+    nodejs
+    awscli2
   ];
 
   lint = [

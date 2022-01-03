@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="modlauncher-8.0.91">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/cpw/mods/modlauncher/8.0.9/modlauncher-8.0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="minecraft-data - Copy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/minecraft_server.1.16.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/forge-1.16.5-36.2.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/forge-1.16.5-36.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/forge-1.16.5-36.2.19-installer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

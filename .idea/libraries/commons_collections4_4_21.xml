@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="commons-collections4-4.21">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

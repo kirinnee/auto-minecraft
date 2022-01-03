@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="eventbus-4.0.01">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data - Copy/libraries/net/minecraftforge/eventbus/4.0.0/eventbus-4.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

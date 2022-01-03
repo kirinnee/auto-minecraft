@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="installertools-1.2.61">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/playbooks/modules/server/minecraft-data/libraries/net/minecraftforge/installertools/1.2.6/installertools-1.2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
